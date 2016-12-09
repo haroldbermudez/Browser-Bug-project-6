@@ -3,6 +3,9 @@
 <head>
     <title>Matching Game</title>
     <style>
+        body {
+            background-image: url("res/shrek.png");
+        }
         img {
             position: inherit;
             animation: mymove 10s linear infinite , side 5s linear infinite;
@@ -15,10 +18,12 @@
         @keyframes side {
             100% {transform: rotate(360deg);}
         }
+
         div {
             position: absolute;
             width: 500px;
             height: 500px;
+            animation: side 7s linear infinite;
         }
         fs {
             width: 255px;
@@ -39,6 +44,7 @@
 </div>
 <div id="rightSide">
 </div>
+<embed src="res/" autostart="true"></embed>
 <fs id="ad" class="DragElement" data-title="YOu just Got..." style="text-align: center; display: none;">
     <h1>Shrecked!</h1>
     <img src="res/shrek.png" width="255" height="255">
@@ -91,8 +97,9 @@
             event.stopPropagation();
             numberOfFaces += 5;
             generateFaces();
-            fs.element.style.top = 255 +"px";
             fs.element.style.left = 255 + "px";
+            fs.element.style.top = 255 + "px";
+            itera = 0;
         }
     }
     generateFaces();
